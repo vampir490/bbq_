@@ -5,6 +5,8 @@ gem 'rails', '~> 5.2.4'
 
 gem 'jquery-rails'
 
+gem 'devise'
+
 gem 'twitter-bootstrap-rails'
 
 gem 'uglifier', '>= 1.3.0'
