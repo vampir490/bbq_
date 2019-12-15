@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-xs-12 buffer-top">
+      <h2 style="color: white">Log in</h2>
+      <%= content_tag 'div', '', class: 'authenticate-background',
+                      style: "background-image: url(#{asset_path('fire.jpg')})" %>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-md-8 col-xs-10">
+              <%= f.label :email, style: "color: white" %>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email",
+                                class: "form-control", placeholder: "example@example.com" %>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="row">
+            <div class="col-md-8 col-xs-10">
+              <%= f.label :password, style: "color: white" %>
+              <%= f.password_field :password, class: "form-control",
+                                   autocomplete: "current-password" %>
+            </div>
+          </div>
+        </div>
+
+        <% if devise_mapping.rememberable? %>
+          <div class="form-group">
+            <%= f.check_box :remember_me %>
+            <span style="color: white">Remember me</span>
+            <!--%= f.label :remember_me %-->
+          </div>
+        <% end %>
+
+        <div class="actions">
+          <%= f.submit "Log in", class: "btn btn-info buffer-bottom" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <%= render "devise/shared/links" %>
+</div>

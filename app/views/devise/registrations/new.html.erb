@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-xs-12">
+      <%= content_tag 'div', '', class: 'authenticate-background',
+                      style: "background-image: url(#{asset_path('fire.jpg')})" %>
+      <h2 style="color: white">Sign up</h2>
+
+      <%= form_for(@user, as: :user, url: registration_path(@user)) do |f| %>
+        <%= render "devise/shared/error_messages", resource: @user %>
+
+        <div class="form-group">
+          <div class="row">
+            <div class="col-md-8 col-xs-10">
+              <%= f.label :email, style: "color: white" %>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control",
+                                placeholder: "example@example.com" %>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="row">
+            <div class="col-md-8 col-xs-10">
+              <%= f.label :password, style: "color: white" %>
+              <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+              <% if @minimum_password_length %>
+                <small class="form-text text-muted" , style="color: white"><%= @minimum_password_length %> characters
+                  minimum</small>
+              <% end %>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="row">
+            <div class="col-md-8 col-xs-10">
+              <%= f.label :password_confirmation, style: "color: white" %>
+              <%= f.password_field :password_confirmation, autocomplete: "new-password",
+                                   class: "form-control" %>
+            </div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Sign up", class: "btn btn-info buffer-bottom" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="buffer-top">
+    <%= render "devise/shared/links" %>
+  </div>
+</div>
