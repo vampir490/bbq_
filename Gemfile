@@ -6,6 +6,8 @@ gem 'rails', '~> 5.2.4'
 gem 'jquery-rails'
 
 gem 'devise'
+gem 'devise-i18n'
+gem 'rails-i18n', '~> 5.1'
 
 gem 'twitter-bootstrap-rails'
 

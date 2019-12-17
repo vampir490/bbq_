@@ -2,9 +2,9 @@
   <div id="error_explanation">
     <div class="alert alert-danger" role="alert">
       <h2>
-        <%= I18n.t("errors.messages.not_saved",
+        <%= I18n.t 'errors.messages.mistakes',
                    count: resource.errors.count,
-                   resource: resource.class.model_name.human.downcase)
+                   resource: resource.class.model_name.human.downcase
          %>
       </h2>
       <ul>
