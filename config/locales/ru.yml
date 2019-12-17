@@ -32,3 +32,8 @@ ru:
         one: '%{count} ошибка'
         few: '%{count} ошибки'
         many: '%{count} ошибок'
+  clarification:
+    are_you_sure: 'Вы уверены?'
+  helpers:
+    links:
+      cancel: "Отмена"

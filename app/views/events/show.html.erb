@@ -17,6 +17,8 @@
             <div class="buffer-top">
               <%= link_to 'Редактировать', edit_event_path(@event),
                           class: 'btn btn-primary' %>
+              <%= link_to 'Удалить', @event.destroy, 
+                          data: { confirm: t('clarification.are_you_sure') }, class: 'btn btn-danger'%>
           <% end %>
           </div>
         </div>

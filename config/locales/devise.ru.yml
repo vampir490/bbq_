@@ -1,0 +1,6 @@
+ru:
+  devise:
+    links:
+      sign-up: 'Зарегистрироваться'
+      log-in: 'Войти'
+      forgot-your-password: 'Забыли пароль?'
