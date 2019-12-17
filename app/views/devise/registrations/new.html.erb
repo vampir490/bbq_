@@ -3,7 +3,7 @@
     <div class="col-md-8 col-xs-12">
       <%= content_tag 'div', '', class: 'authenticate-background',
                       style: "background-image: url(#{asset_path('fire.jpg')})" %>
-      <h2 style="color: white">Sign up</h2>
+      <h2 style="color: white">Регистрация</h2>
 
       <%= form_for(@user, as: :user, url: registration_path(@user)) do |f| %>
         <%= render "devise/shared/error_messages", resource: @user %>
