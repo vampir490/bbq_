@@ -10,11 +10,13 @@ class SubscriptionsController < ApplicationController
     @new_subscription = @event.subscriptions.build(subscription_params)
     @new_subscription.user = current_user
 
-    if @new_subscription.save
-      # Если сохранилась, редиректим на страницу самого события
+    if @new_subscription.user == @event.user
+      redirect_to @event, alert: I18n.t('controllers.subscriptions.error_same_user')
+    elsif @new_subscription.save
+      # Если сохранилась успешно, редирект на страницу самого события
       redirect_to @event, notice: I18n.t('controllers.subscriptions.created')
     else
-      # если ошибки — рендерим шаблон события
+      # если ошибки — рендерим здесь же шаблон события
       render 'events/show', alert: I18n.t('controllers.subscriptions.error')
     end
   end
