@@ -15,6 +15,8 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'bootsnap'
 
+gem 'flatpickr_rails'
+
 group :production do
   gem 'pg'
 end

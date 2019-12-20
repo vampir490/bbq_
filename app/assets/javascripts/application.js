@@ -14,4 +14,6 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .
+//= require flatpickr
+//= require flatpickr/l10n/ru
 
