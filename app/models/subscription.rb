@@ -16,7 +16,7 @@ class Subscription < ApplicationRecord
 
   validates :user_email, exclusion: { in: :event_email, message: I18n.t('activerecord.validations.error_same_user') }
 
-  validates :user_email, exclusion: { in: :emails, message: I18n.t('activerecord.validations.error_existing_user') }
+  validates :user_email, exclusion: { in: :emails, message: I18n.t('activerecord.validations.error_existing_user') }, unless: -> { user.present? }
 
   # Если есть юзер, выдаем его имя,
   # если нет – дергаем исходный метод
