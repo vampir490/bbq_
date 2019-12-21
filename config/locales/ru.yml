@@ -4,6 +4,9 @@ ru:
     models:
       user: 'Пользователь'
       event: 'Событие'
+    validations:
+      error_same_user: 'Вы не можете подписаться на свое событие'
+      error_existing_user: 'уже существует. Пожалуйста, авторизуйтесь'
 
     # Перевод атрибутов моделей
     attributes:
@@ -17,6 +20,10 @@ ru:
         address: 'Место проведения'
         datetime: 'Дата и время'
         description: 'Описание'
+      subscription:
+        user_name: 'Имя'
+        user_email: 'Email'
+
   controllers:
     events:
       created: 'Вы создали новое мероприятие'
@@ -32,8 +39,6 @@ ru:
       created: 'Вы подписаны на это событие'
       destroyed: 'Участник отписан'
       error: 'Подписка/отписка не сработала'
-      error_same_user: 'Вы не можете подписаться на свое событие'
-      error_existing_user: 'Email уже существует. Пожалуйста, авторизуйтесь'
   app:
     name: 'Шашлыки'
   comments:

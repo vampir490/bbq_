@@ -3,7 +3,7 @@
 <% if errors.any? %>
   <div class="alert alert-danger">
     <div class="lead buffer-bottom">
-      There are <%= errors.count %> errors in the form
+      На форме <%= I18n.t 'errors.messages.mistakes', count: errors.count %>
     </div>
 
     <ul>
