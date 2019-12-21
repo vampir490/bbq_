@@ -11,7 +11,11 @@ class SubscriptionsController < ApplicationController
     @new_subscription.user = current_user
 
     if @new_subscription.user == @event.user
+      # Если подписаться пытается сам создатель события
       redirect_to @event, alert: I18n.t('controllers.subscriptions.error_same_user')
+    elsif User.where(email: @new_subscription.user_email).any?
+      # Если пытается подписать существующего юзера
+      redirect_to @event, alert: I18n.t('controllers.subscriptions.error_existing_user')
     elsif @new_subscription.save
       # Если сохранилась успешно, редирект на страницу самого события
       redirect_to @event, notice: I18n.t('controllers.subscriptions.created')
