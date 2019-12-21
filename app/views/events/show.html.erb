@@ -41,7 +41,7 @@
         <h4>Зовет:</h4>
         <p><%= render partial: 'users/user', object: @event.user %></p>
       </div>
-      <% if @event.subscribers.any? %>
+      <% unless @event.subscriptions.count.zero? %>
       <div class="event-subscriptions">
         <h4>Пойдут:</h4>
         <div>

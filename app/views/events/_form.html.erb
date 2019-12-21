@@ -1,16 +1,3 @@
-<script type="text/javascript">
-    $(document).ready(function(){
-        flatpickr('#flatpickr-input',
-            { enableTime:      true,
-              minDate:         "today",
-              defaultHour:     20,
-              defaultMinute:   30,
-              dateFormat: "d-m-Y H:i",
-              time_24hr: true
-            });
-    });
-</script>
-
 <%= form_for(@event) do |f| %>
   <%= render partial: 'partials/form_errors', locals: {model: @event} %>
 
