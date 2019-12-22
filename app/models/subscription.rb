@@ -14,9 +14,7 @@ class Subscription < ApplicationRecord
   validates :user, uniqueness: {scope: :event_id}, if: -> { user.present? }
   validates :user_email, uniqueness: {scope: :event_id}, unless: -> { user.present? }
 
-  validates :user_email, exclusion: { in: :event_email, message: I18n.t('activerecord.validations.error_same_user') }
-
-  validates :user_email, exclusion: { in: :emails, message: I18n.t('activerecord.validations.error_existing_user') }, unless: -> { user.present? }
+  validate :user_email_cannot_be_existing_email, :subscriber_cannot_be_events_creator
 
   # Если есть юзер, выдаем его имя,
   # если нет – дергаем исходный метод
@@ -37,12 +35,16 @@ class Subscription < ApplicationRecord
     end
   end
 
-  # Метод определяет email создавшего событие пользователя
-  def event_email
-    event.user.email
+  def user_email_cannot_be_existing_email
+    if !user.present? && User.where(email: user_email).any?
+      errors.add(:user_email, I18n.t('activerecord.validations.error_existing_user'))
+    end
   end
 
-  def emails
-    User.all.map(&:email)
+  def subscriber_cannot_be_events_creator
+    if event.user == user
+      errors.add(:user, "- #{I18n.t('activerecord.validations.error_same_user')}")
+    end
   end
 end
+

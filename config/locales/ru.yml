@@ -5,7 +5,7 @@ ru:
       user: 'Пользователь'
       event: 'Событие'
     validations:
-      error_same_user: 'Вы не можете подписаться на свое событие'
+      error_same_user: 'Нельзя подписаться на собственное событие'
       error_existing_user: 'уже существует. Пожалуйста, авторизуйтесь'
 
     # Перевод атрибутов моделей
@@ -23,6 +23,7 @@ ru:
       subscription:
         user_name: 'Имя'
         user_email: 'Email'
+        user: 'Пользователь'
 
   controllers:
     events:
