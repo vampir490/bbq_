@@ -2,9 +2,6 @@ class Subscription < ApplicationRecord
   belongs_to :event
   belongs_to :user, optional: true
 
-  # Обязательно должно быть событие
-  validates :event, presence: true
-
   # Проверки user_name и user_email выполняются,
   # только если user не задан
   # То есть для анонимных пользователей
@@ -36,7 +33,7 @@ class Subscription < ApplicationRecord
   end
 
   def user_email_cannot_be_existing_email
-    if !user.present? && User.where(email: user_email).any?
+    if user.blank? && User.where(email: user_email).any?
       errors.add(:user_email, I18n.t('activerecord.validations.error_existing_user'))
     end
   end
