@@ -7,7 +7,6 @@ ru:
     validations:
       error_same_user: 'Нельзя подписаться на собственное событие'
       error_existing_user: 'уже существует. Пожалуйста, авторизуйтесь'
-      error_event_in_past: 'в прошлом? Серьезно?'
 
     # Перевод атрибутов моделей
     attributes:
@@ -25,6 +24,13 @@ ru:
         user_name: 'Имя'
         user_email: 'Email'
         user: 'Пользователь'
+
+    errors:
+      models:
+        event:
+          attributes:
+            datetime:
+              inclusion: 'в прошлом? Серьезно?'
 
   controllers:
     events:
