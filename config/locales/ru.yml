@@ -4,6 +4,8 @@ ru:
     models:
       user: 'Пользователь'
       event: 'Событие'
+      photo: 'Фотография'
+      comment: 'Комментарий'
     validations:
       error_same_user: 'Нельзя подписаться на собственное событие'
       error_existing_user: 'уже существует. Пожалуйста, авторизуйтесь'
@@ -13,6 +15,7 @@ ru:
       user:
         email: 'Email'
         name: 'Имя'
+        avatar: 'Аватар'
         password: 'Пароль'
         password_confirmation: 'Подтверждение пароля'
       event:
@@ -24,6 +27,12 @@ ru:
         user_name: 'Имя'
         user_email: 'Email'
         user: 'Пользователь'
+      photo:
+        photo: 'Фотография'
+      comment:
+        user_name: 'Ваше имя'
+        body: 'Комментарий'
+
 
     errors:
       models:
@@ -47,6 +56,10 @@ ru:
       created: 'Вы подписаны на это событие'
       destroyed: 'Участник отписан'
       error: 'Подписка/отписка не сработала'
+    photos:
+      error: 'Что-то не так с фоткой'
+      created: 'Вы добавили фотографию к событию'
+      destroyed: 'Вы удалили фотку'
   app:
     name: 'Шашлыки'
   comments:
