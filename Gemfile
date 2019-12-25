@@ -13,6 +13,7 @@ gem 'rails-i18n', '~> 5.1'
 
 gem 'carrierwave'
 gem 'rmagick'
+gem 'fog-aws'
 
 gem 'twitter-bootstrap-rails'
 
