@@ -77,6 +77,13 @@ ru:
       event: 'Событие'
       datetime: 'Состоится'
       owner: 'Организатор'
+      new_comment: 'Новый комментарий для события'
+    photo:
+      title: 'Новая фотография'
+      author: 'Загрузил'
+      photo: 'Фотография'
+      new_photo: 'Новая фотография для события'
+      look_event: 'Посмотреть событие'
     subscription:
       title: 'Новая подписка'
       name: 'Имя'
@@ -85,6 +92,7 @@ ru:
       event: 'Событие'
       datetime: 'Состоится'
       owner: 'Организатор'
+      new_subscriber: 'Новый подписчик для события'
 
   errors:
     messages:
