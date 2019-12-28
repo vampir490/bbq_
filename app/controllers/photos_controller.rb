@@ -12,7 +12,7 @@ class PhotosController < ApplicationController
     @new_photo.user = current_user
 
     if @new_photo.save
-      notify_about_photo(@event, @new_photo)
+      notify_about_photo(@new_photo)
       # редиректим на событие с сообщением
       redirect_to @event, notice: I18n.t('controllers.photos.created')
     else
@@ -56,7 +56,7 @@ class PhotosController < ApplicationController
       [@event.user.email] - [photo.user.email]).uniq
 
     all_emails.each do |mail|
-      EventMailer.photo(event, photo, mail).deliver_now
+      EventMailer.photo(@event, photo, mail).deliver_now
     end
   end
 
