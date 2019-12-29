@@ -38,7 +38,7 @@ ru:
         photo:
           attributes:
             photo:
-              presence: 'должна быть приложена'
+              blank: 'должна быть приложена'
         event:
           attributes:
             datetime:
