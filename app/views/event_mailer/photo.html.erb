@@ -1,13 +1,15 @@
 <h1 class="buffer-bottom"><%= t '.title' %></h1>
-<p>
-  <%= t '.new_photo' %> <%= @event.title %>
-</p>
+
+<p><%= t '.new_photo' %> <%= @event.title %></p>
 
 <div class="buffer-bottom">
   <strong><%= link_to image_tag(@photo.photo.thumb.url), @photo.photo.url %></strong>
 </div>
 
 <hr/>
+
+<p><%= t '.author' %>: <strong><%= @photo.user.name %></strong></p>
+<p><%= t '.time' %>: <%= l @photo.created_at, format: :long %></p>
 
 <div>
   <%= link_to I18n.t('event_mailer.photo.look_event'), event_url(@event) %>

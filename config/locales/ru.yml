@@ -33,9 +33,12 @@ ru:
         user_name: 'Ваше имя'
         body: 'Комментарий'
 
-
     errors:
       models:
+        photo:
+          attributes:
+            photo:
+              presence: 'должна быть приложена'
         event:
           attributes:
             datetime:
@@ -84,6 +87,7 @@ ru:
       photo: 'Фотография'
       new_photo: 'Новая фотография для события'
       look_event: 'Посмотреть событие'
+      time: 'Когда'
     subscription:
       title: 'Новая подписка'
       name: 'Имя'

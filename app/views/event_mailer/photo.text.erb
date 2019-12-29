@@ -3,4 +3,5 @@
 
 <%= t '.event' %>: <%= @event.title %>
 <%= t '.author' %>: <%= @photo.user.name %>
+<%= t '.time' %>: <%= l @photo.created_at, format: :long %>
 

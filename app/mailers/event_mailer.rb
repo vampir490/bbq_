@@ -17,7 +17,6 @@ class EventMailer < ApplicationMailer
   def photo(event, photo, email)
     @event = event
     @photo = photo
-    @url = Rails.application.config.action_mailer.default_url_options[:host]
 
     mail to: email, subject: "#{I18n.t("event_mailer.photo.new_photo")} \"#{event.title}\""
   end
