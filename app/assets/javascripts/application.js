@@ -17,4 +17,5 @@
 //= require flatpickr
 //= require flatpickr/l10n/ru
 //= require calendar
+//= require map
 
