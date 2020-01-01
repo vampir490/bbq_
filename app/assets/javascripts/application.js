@@ -15,7 +15,7 @@
 //= require twitter/bootstrap
 //= require_tree .
 //= require flatpickr
-
 //= require calendar
 //= require map
+//= require lightbox-bootstrap
 

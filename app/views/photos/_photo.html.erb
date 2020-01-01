@@ -1,4 +1,14 @@
 <div class="event-photo buffer-both">
-  <%= link_to image_tag(photo.photo.thumb.url), photo.photo.url %>
-  Добавил <%= render partial: 'users/user', object: photo.user %>
+  <% deleting = link_to(
+      fa_icon('trash'), event_photo_path(photo.event, photo),
+      method: :delete, data: {confirm: t('controllers.photos.destroy_confirm')}
+  ) %>
+
+  <% image_title = "#{t('activerecord.attributes.photo.added')}
+  #{render partial: 'users/user', object: photo.user} #{deleting if current_user_can_edit?(photo)}" %>
+
+  <%= link_to image_tag(photo.photo.thumb.url), photo.photo.url, data: {
+      toggle: 'lightbox', title: image_title, gallery: 'event-photos'
+  } %>
+<!--  Добавил <%#= render partial: 'users/user', object: photo.user %>-->
 </div>

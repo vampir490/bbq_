@@ -34,11 +34,11 @@
            class="buffer-bottom">
       </div>
       <div class="event-photos">
-        <div class="event-photos-gallery">
+        <div class="event-photos-gallery gallery">
           <%= render partial: 'photos/photo', collection: @event.photos.except(@new_photo) %>
         </div>
 
-        <div class="event-photo-form">
+        <div class="row event-photo-form">
           <%= render partial: 'photos/form', locals: {photo: @new_photo || @event.photos.build} %>
         </div>
       </div>

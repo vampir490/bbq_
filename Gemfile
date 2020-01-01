@@ -21,6 +21,9 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'bootsnap'
 
+gem 'coffee-rails'
+gem 'bootstrap'
+gem 'lightbox-bootstrap-rails', '5.1.0.1'
 gem 'flatpickr_rails'
 
 group :production do
