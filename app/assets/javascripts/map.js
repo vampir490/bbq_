@@ -1,12 +1,15 @@
 ymaps.ready(init);
 
 function init(){
-  address = document.getElementById('map').getAttribute('data-address');
-
+  address = null;
+  map = document.getElementById('map');
+  if (map != null) {
+    address = map.getAttribute('data-address');
     var myMap = new ymaps.Map("map", {
-    center: [55.76, 37.64],
-    zoom: 10
-  });
+      center: [55.76, 37.64],
+      zoom: 10
+    });
+  }
 
   myGeocoder = ymaps.geocode(address);
 
