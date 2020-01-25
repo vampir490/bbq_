@@ -31,7 +31,10 @@
 /config/master.key
 
 .idea
-config.database.yml
-config.secrets.yml
+/config.database.yml
+/config.secrets.yml
 
 public/uploads
+
+# Ignore application configuration
+/config/application.yml
