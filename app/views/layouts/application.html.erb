@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet"
         href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-  <script src="https://api-maps.yandex.ru/2.1/?apikey=<%= ENV['YANDEX_MAPS_BBQ_KEY'] %>&lang=ru_RU"
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=<%= ENV["yandex_maps_bbq_key"] %>&lang=ru_RU"
     type="text/javascript">
   </script>
   <title><%= content_for?(:title) ? yield(:title) : "cynepbbq" %></title>
