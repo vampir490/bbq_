@@ -32,7 +32,13 @@ group :production do
 end
 
 group :development, :test do
-  gem 'sqlite3'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'listen'
+  gem 'sqlite3'
+
+  gem 'capistrano', '~> 3.8.1'
+  gem 'capistrano-rails', '~> 1.2'
+  gem 'capistrano-passenger', '~> 0.2'
+  gem 'capistrano-rbenv', '~> 2.1'
+  gem 'capistrano-bundler', '~> 1.2'
 end
