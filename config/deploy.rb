@@ -2,7 +2,7 @@
 lock "~> 3.8.1"
 
 set :application, "cypenbbq"
-set :repo_url, "git@github.com/vampir490/bbq_.git"
+set :repo_url, "git@github.com:vampir490/bbq_.git"
 
 # Папка, где будет храниться приложение
 set :deploy_to, '/home/deploy/apps/bbq_'
