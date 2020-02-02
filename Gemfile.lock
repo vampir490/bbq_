@@ -173,6 +173,8 @@ GEM
     pg (1.1.4)
     popper_js (1.14.5)
     public_suffix (4.0.1)
+    pundit (2.1.0)
+      activesupport (>= 3.0.0)
     rack (2.0.7)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -273,6 +275,7 @@ DEPENDENCIES
   lightbox-bootstrap-rails (= 5.1.0.1)
   listen
   pg
+  pundit
   rails (~> 5.2.4)
   rails-i18n (~> 5.1)
   rmagick

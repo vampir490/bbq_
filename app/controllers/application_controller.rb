@@ -1,6 +1,9 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  include Pundit
+  protect_from_forgery with: :exception
+
   helper_method :current_user_can_edit?
 
   def configure_permitted_parameters
