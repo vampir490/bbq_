@@ -113,3 +113,6 @@ ru:
   helpers:
     links:
       cancel: "Отмена"
+
+  pundit:
+    not_authorized: 'У вас недостаточно прав'

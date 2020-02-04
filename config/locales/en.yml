@@ -31,3 +31,5 @@
 
 en:
   hello: "Hello world"
+  pundit:
+    not_authorized: 'This is not allowed!'
