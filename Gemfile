@@ -33,6 +33,9 @@ group :production do
 end
 
 group :development, :test do
+  gem 'rspec-rails'
+  gem 'factory_bot'
+  gem 'shoulda-matchers'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'listen'
   gem 'sqlite3'
