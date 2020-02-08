@@ -27,6 +27,7 @@ gem 'coffee-rails'
 gem 'bootstrap'
 gem 'lightbox-bootstrap-rails', '5.1.0.1'
 gem 'flatpickr_rails'
+gem 'resque'
 
 group :production do
   gem 'pg'
@@ -39,6 +40,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'listen'
   gem 'sqlite3'
+  gem 'letter_opener'
 
   gem 'capistrano', '~> 3.8.1'
   gem 'capistrano-rails', '~> 1.2'
