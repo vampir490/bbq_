@@ -1,7 +1,7 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.8.1"
 
-set :application, "cypenbbq"
+set :application, "cynepbbq"
 set :repo_url, "git@github.com:vampir490/bbq_.git"
 
 # Папка, где будет храниться приложение
