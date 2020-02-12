@@ -1,5 +1,6 @@
 <h1><%= t '.title' %></h1>
 <p><%= @comment.body %></p>
+<p><%= link_to I18n.t('event_mailer.photo.look_event'), event_url(@event) %></p>
 <p><%= t '.author' %>: <strong><%= @comment.user_name %></strong></p>
 
 <hr/>

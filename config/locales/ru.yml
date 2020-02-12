@@ -90,7 +90,7 @@ ru:
       author: 'Загрузил'
       photo: 'Фотография'
       new_photo: 'Новая фотография для события'
-      look_event: 'Посмотреть событие'
+      look_event: 'Посмотреть'
       time: 'Когда'
     subscription:
       title: 'Новая подписка'
