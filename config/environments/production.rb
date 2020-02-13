@@ -95,7 +95,7 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.action_mailer.default_url_options = {host: 'bbqcynep.herokuapp.com'}
+  config.action_mailer.default_url_options = {host: 'http://burundukmedia.ru'}
 
   # Ошибки рассылки юзеру не показываем
   config.action_mailer.raise_delivery_errors = false
@@ -108,12 +108,12 @@ Rails.application.configure do
 
   # А это для SendGrid
   ActionMailer::Base.smtp_settings = {
-    address:               'smtp.sendgrid.net',
+    address:              'smtp.sendgrid.net',
     port:                  '587',
     authentication:        :plain,
     user_name:             ENV['mailer_username'],
     password:              ENV['mailer_password'],
-    domain:                'heroku.ru',
+    domain:                'burundukmedia.ru',
     enable_starttls_auto:  true
   }
 end
