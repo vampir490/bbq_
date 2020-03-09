@@ -12,7 +12,6 @@ class EventPolicy < ApplicationPolicy
   end
 
   def show?
-
   end
 
   class Scope < Scope

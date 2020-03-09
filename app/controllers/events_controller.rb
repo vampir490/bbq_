@@ -66,6 +66,7 @@ class EventsController < ApplicationController
       cookies.permanent["events_#{@event.id}_pincode"] = params[:pincode]
     end
 
+    # To check the PIN we are trying to take it from cookies
     pincode = cookies.permanent["events_#{@event.id}_pincode"]
     unless @event.pincode_valid?(pincode)
       if params[:pincode].present?

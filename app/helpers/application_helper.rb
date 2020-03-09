@@ -7,8 +7,8 @@ module ApplicationHelper
     end
   end
 
-  # Возвращает адрес рандомной фотки события, если есть хотя бы одна
-  # Или ссылку на картинку по умолчанию
+  # Returning the address of random photo in case of any
+  # Or the default link to the image
   def event_photo(event)
     photos = event.photos.persisted
 
@@ -19,7 +19,7 @@ module ApplicationHelper
     end
   end
 
-  # Возвращает миниатюрную версию фотки
+  # Returning a small copy of the photo
   def event_thumb(event)
     photos = event.photos.persisted
 

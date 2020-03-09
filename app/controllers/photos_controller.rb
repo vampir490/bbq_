@@ -3,18 +3,17 @@ class PhotosController < ApplicationController
   before_action :set_photo, only: [:destroy]
 
   def create
-    # Создаем новую фотографию у нужного события @event
     @new_photo = @event.photos.build(photo_params)
 
-    # Проставляем у фотографии пользователя
+    # Set the user to the photo
     @new_photo.user = current_user
 
     if @new_photo.save
       notify_about_photo(@new_photo)
-      # редиректим на событие с сообщением
+      # redirect to the event with the comment
       redirect_to @event, notice: I18n.t('controllers.photos.created')
     else
-      # Если нет — рендерим событие с ошибкой
+      # if no - redirect with error
       render 'events/show', alert: I18n.t('controllers.photos.error')
     end
   end
@@ -22,29 +21,25 @@ class PhotosController < ApplicationController
   def destroy
     message = {notice: I18n.t('controllers.photos.destroyed')}
 
-    # Проверяем, может ли пользователь удалить фотографию
-    # Если может — удаляем
+    # Checking if the user can delete photo
     if current_user_can_edit?(@photo)
       @photo.destroy
     else
-      # Если нет — сообщаем ему
+      # If he cannot delete it, render error
       message = {alert: I18n.t('controllers.photos.error')}
     end
 
-    # В любом случае редиректим юзера на событие
+    # In any case redirect to event
     redirect_to @event, message
   end
 
   private
 
-  # Так как фотография — вложенный ресурс, в params[:event_id] рельсы
-  # автоматически положат id события, которому принадлежит фотография
-  # Это событие будет лежать в переменной контроллера @event
   def set_event
     @event = Event.find(params[:event_id])
   end
 
-  # Получаем фотографию из базы стандартным методом find
+  # Taking the photo from the DB
   def set_photo
     @photo = @event.photos.find(params[:id])
   end
@@ -58,8 +53,8 @@ class PhotosController < ApplicationController
     end
   end
 
-  # При создании новой фотографии мы получаем массив параметров photo
-  # c единственным полем photo
+  # while creating new photo we are taking the array of parameters photo
+  # with the only value photo
   def photo_params
     params.fetch(:photo, {}).permit(:photo)
   end

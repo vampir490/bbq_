@@ -28,7 +28,7 @@ function init(){
       myMap.setCenter(coordinates);
       myMap.setZoom(15);
     }, function (err) {
-      alert('Ошибка при определении местоположения');
+      alert('error with positioning');
     }
   );
 }

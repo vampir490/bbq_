@@ -17,6 +17,6 @@ module Bbq
     # the framework and any gems in your application.
     config.time_zone = 'Moscow'
     config.active_record.default_timezone = :local
-    config.i18n.default_locale = :ru
+    config.i18n.default_locale = :en
   end
 end

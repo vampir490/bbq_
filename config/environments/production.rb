@@ -97,16 +97,16 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = {host: 'http://burundukmedia.ru'}
 
-  # Ошибки рассылки юзеру не показываем
+  # Do not show errors of mailing
   config.action_mailer.raise_delivery_errors = false
 
-  # Делать рассылку писем (при false приложение только имитирует отправку)
+  # To make mailing
   config.action_mailer.perform_deliveries = true
 
-  # Устанавливаем протокол, по которому отправлять (SMTP)
+  # Protocol to send emails (SMTP)
   config.action_mailer.delivery_method = :smtp
 
-  # А это для SendGrid
+  # That is for SendGrid
   ActionMailer::Base.smtp_settings = {
     address:              'smtp.sendgrid.net',
     port:                  '587',

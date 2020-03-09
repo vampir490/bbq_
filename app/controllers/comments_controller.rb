@@ -8,10 +8,10 @@ class CommentsController < ApplicationController
 
     if @new_comment.save
       notify_subscribers(@event, @new_comment)
-      # редирект на страницу самого события
+      # redirect to events page
       redirect_to @event, notice: I18n.t('controllers.comments.created')
     else
-      # Если ошибки — рендерим здесь же шаблон события (своих шаблонов у коммента нет)
+      # In case of error it renders the event's template шаблон события (своих шаблонов у коммента нет)
       render 'events/show', alert: I18n.t('controllers.comments.error')
     end
   end
@@ -44,13 +44,13 @@ class CommentsController < ApplicationController
   end
 
   def notify_subscribers(event, comment)
-    # Собираем всех подписчиков и автора события в массив мэйлов, исключаем повторяющиеся
+    # Collect all subcribers and the author of event, remove repeated
     all_emails = (event.subscriptions.map(&:user_email) +
       [event.user.email] - [current_user&.email]).uniq
 
-    # По адресам из этого массива делаем рассылку
-    # Как и в подписках, берём EventMailer и его метод comment с параметрами
-    # И отсылаем в том же потоке
+    # Sending emails to these addresses
+    # It takes EventMailer and its method comment with parameters
+    # and send in the same stream
     all_emails.each do |mail|
       EventMailer.comment(event, comment, mail).deliver_later
     end

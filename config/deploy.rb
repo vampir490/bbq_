@@ -4,10 +4,10 @@ lock "~> 3.8.1"
 set :application, "cynepbbq"
 set :repo_url, "git@github.com:vampir490/bbq_.git"
 
-# Папка, где будет храниться приложение
+# Where to store the app
 set :deploy_to, '/home/deploy/apps/bbq_'
 
-# Файлы, которые лежат вне репозитория
+# Files to be stored outside of repo
 append :linked_files, 'config/database.yml', 'config/secrets.yml', 'config/application.yml'
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads'
 
