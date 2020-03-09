@@ -2,8 +2,6 @@ class PhotosController < ApplicationController
   before_action :set_event, only: [:create, :destroy]
   before_action :set_photo, only: [:destroy]
 
-  # Обратите внимание: фотку может сейчас добавить даже неавторизованный пользовать
-  # Смотрите домашки!
   def create
     # Создаем новую фотографию у нужного события @event
     @new_photo = @event.photos.build(photo_params)
