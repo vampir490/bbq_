@@ -11,9 +11,6 @@ A training project as part of Ruby / Ruby on Rails coding bootcamp. It shows the
 * emails sending;
 * deployment with capistrano.
 
-## DEMO
-[burundukmedia.ru](http://burundukmedia.ru/)
-
 ## Versions used
 * Ruby 2.6.4
 * Rails 5.2
